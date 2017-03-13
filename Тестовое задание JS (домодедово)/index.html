@@ -1,0 +1,61 @@
+<!Doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="description" content="Тестовое задание">
+    	<meta name="keywords" content="Задание" />
+    	<meta name="author" content="Lupaina Kristina">
+		<title>Тестовое задание</title>
+		<!--[if lt IE 9]> 
+ 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
+		<![endif]-->
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="page-wrapper">
+			<h2 class="margin-bottom">Задание 1</h2>
+			<div class="margin-bottom">
+				<p>Для того, чтобы сделать преобразование XML в JSON можно воспользоваться следующими библиотеками XStream, Jackson. 
+				Также можно воспользоваться библиотеками xml2json и json2xml. С помощью них преобразование можно выполнить следующим образом: </p>
+				<pre>
+					var xml = '<e name="value">text</e>',
+					    dom = parseXml(xml),
+					    json = xml2json(dom),
+					    xml2 = json2xml(eval(json));
+				</pre>
+				<p>Еще можно использовать библиотеку https://github.com/abdmob/x2js</p>
+				<pre>
+					var x2js = new X2JS();
+					function convertXml2JSon() {
+					    $("#jsonText").val(JSON.stringify(x2js.xml_str2json($("#xmlText").val())));
+					}
+
+					function convertJSon2XML() {
+					    $("#xmlText").val(x2js.json2xml_str($.parseJSON($("#jsonText").val())));
+					}
+
+					convertXml2JSon();
+					convertJSon2XML();
+					$("#convertToJsonBtn").click(convertXml2JSon);
+					$("#convertToXmlBtn").click(convertJSon2XML);
+				</pre>
+			</div>
+			<h2 class="margin-bottom">Задание 3</h2>
+			<div class="wrap-img margin-bottom"></div>
+			<h2 class="margin-bottom">Задание 5</h2>
+			<form class="margin-bottom">
+				<input class="margin-bottom" id="a" type="text"><br>
+				<input class="margin-bottom" id="b" type="text"><br>
+				<input type="button" value="Равно" onclick="calculation();">
+			</form>
+			<div class="margin-bottom" id="result"></div>
+		</div>
+
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script src="js/script.js"></script>
+		
+	</body>
+</html>
